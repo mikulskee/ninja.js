@@ -4,13 +4,13 @@ const User = (props) => {
 	const { user } = props;
 
 	return (
-		<tr>
-			<td>
+		<li className="pagination">
+			<div>
 				<a href={user.edit_path}>{user.name1}</a>
 				<br />
 				<small>{user.email}</small>
-			</td>
-		</tr>
+			</div>
+		</li>
 	);
 };
 
