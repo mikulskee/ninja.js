@@ -5,7 +5,7 @@ import PageButton from '../PageButton/PageButton';
 const Pagination = (props) => {
 	const { currentPageNumber, totalNumberOfPages, onChange } = props;
 
-	const [pagesButtons, setPagesButtons] = useState();
+	const [pagesButtons, setPagesButtons] = useState([]);
 
 	useEffect(() => {
 		const pages = Array.from(Array(totalNumberOfPages).keys()).map((pageNumber) => {
@@ -19,9 +19,9 @@ const Pagination = (props) => {
 			);
 		});
 		setPagesButtons(pages);
-	}, [currentPageNumber, totalNumberOfPages]);
+	}, [currentPageNumber, totalNumberOfPages, onChange]);
 
-	return <ul className="pagination">{pagesButtons}</ul>;
+	return <ul className="pagination">{pagesButtons.length ? pagesButtons : null}</ul>;
 };
 
 export default Pagination;
