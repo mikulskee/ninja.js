@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import Page from '../Page/Page';
+import PageButton from '../PageButton/PageButton';
 
 const Pagination = (props) => {
 	const { currentPageNumber, totalNumberOfPages, onChange } = props;
@@ -10,7 +10,7 @@ const Pagination = (props) => {
 	useEffect(() => {
 		const pages = Array.from(Array(totalNumberOfPages).keys()).map((pageNumber) => {
 			return (
-				<Page
+				<PageButton
 					key={pageNumber}
 					currentPageNumber={currentPageNumber}
 					pageNumber={pageNumber}
