@@ -14,6 +14,8 @@ const SearchBar = (props) => {
 				);
 			});
 			setUsersList(usersFound);
+		} else {
+			setUsersList(usersData);
 		}
 	};
 
