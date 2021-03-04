@@ -1,19 +1,19 @@
 import React from 'react';
 
 const SearchBar = (props) => {
-	const { usersList, setUsersList } = props;
+	const { usersData, setUsersList } = props;
 
 	const handleSearch = (e) => {
 		const text = e.target.value;
 
 		if (text) {
-			const rowsFound = usersList.filter((user) => {
+			const usersFound = usersData.filter((user) => {
 				return (
 					user.name1.toLowerCase().search(text.toLowerCase()) > -1 ||
 					(user.email && user.email.toLowerCase().search(text.toLowerCase()) > -1)
 				);
 			});
-			setUsersList(rowsFound);
+			setUsersList(usersFound);
 		}
 	};
 

@@ -8,13 +8,9 @@ export const DataTable = (props) => {
 	const { usersData, locale, rowsPerPage } = props;
 
 	const [usersList, setUsersList] = useState(usersData);
+	const [startIndex, setStartIndex] = useState();
 	const [currentPageIndex, setCurrentPageIndex] = useState(0);
 	const [totalNumberOfPages, setTotalNumberOfPages] = useState();
-
-	const rowsInPageNumber = (pageNumber) => {
-		const startIndex = pageNumber * rowsPerPage;
-		return [startIndex, startIndex + rowsPerPage];
-	};
 
 	const calculateTotalNumberOfPages = () => {
 		if (rowsPerPage == 0) {
@@ -30,15 +26,19 @@ export const DataTable = (props) => {
 
 	const rowsToRender = usersList
 		.map((user) => <User key={user.per_id} user={user} />)
-		.slice(rowsInPageNumber(currentPageIndex));
+		.slice(startIndex, startIndex + rowsPerPage);
 
 	useEffect(() => {
 		calculateTotalNumberOfPages();
 	}, [rowsPerPage, calculateTotalNumberOfPages]);
 
+	useEffect(() => {
+		setStartIndex(currentPageIndex * rowsPerPage);
+	}, [currentPageIndex, rowsPerPage]);
+
 	return (
 		<div>
-			<SearchBar usersList={usersList} setUsersList={setUsersList} />
+			<SearchBar usersData={usersData} setUsersList={setUsersList} />
 			<div>
 				<tbody>{rowsToRender}</tbody>
 			</div>
