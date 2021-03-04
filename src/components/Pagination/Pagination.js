@@ -14,10 +14,7 @@ const Pagination = ({ currentPageNumber, totalNumberOfPages, onChange }) => {
 		);
 	});
 
-	if (pages.length <= 1) {
-		return null;
-	}
-	return <ul className="pagination">{pages}</ul>;
+	return <ul className="pagination">{Boolean(pages.length) && pages}</ul>;
 };
 
 export default Pagination;
