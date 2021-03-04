@@ -1,0 +1,1 @@
+{"version":3,"sources":["App.css"],"names":[],"mappings":"AAAA,MACE,eACF,CAEA,MACE,kBACF,CAEA,YACE,eACF,CAEA,eACE,oBACF","file":"main.b8d8c66a.chunk.css","sourcesContent":[".mt-3 {\r\n  margin-top: 2rem;\r\n}\r\n\r\n.mr-1 {\r\n  margin-right: .5rem;\r\n}\r\n\r\n.pagination {\r\n  list-style: none;\r\n}\r\n\r\n.pagination li {\r\n  display: inline-block;\r\n}\r\n"]}

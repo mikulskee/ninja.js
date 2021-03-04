@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ninja.js/static/css/main.b8d8c66a.chunk.css",
+    "main.js": "/ninja.js/static/js/main.2bf590a6.chunk.js",
+    "main.js.map": "/ninja.js/static/js/main.2bf590a6.chunk.js.map",
+    "runtime-main.js": "/ninja.js/static/js/runtime-main.991455b8.js",
+    "runtime-main.js.map": "/ninja.js/static/js/runtime-main.991455b8.js.map",
+    "static/js/2.da2d5981.chunk.js": "/ninja.js/static/js/2.da2d5981.chunk.js",
+    "static/js/2.da2d5981.chunk.js.map": "/ninja.js/static/js/2.da2d5981.chunk.js.map",
+    "index.html": "/ninja.js/index.html",
+    "precache-manifest.ed473fac2a0faa2e75e0075d1632fd8e.js": "/ninja.js/precache-manifest.ed473fac2a0faa2e75e0075d1632fd8e.js",
+    "service-worker.js": "/ninja.js/service-worker.js",
+    "static/css/main.b8d8c66a.chunk.css.map": "/ninja.js/static/css/main.b8d8c66a.chunk.css.map",
+    "static/js/2.da2d5981.chunk.js.LICENSE": "/ninja.js/static/js/2.da2d5981.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.991455b8.js",
+    "static/js/2.da2d5981.chunk.js",
+    "static/css/main.b8d8c66a.chunk.css",
+    "static/js/main.2bf590a6.chunk.js"
+  ]
+}
