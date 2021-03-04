@@ -4,9 +4,10 @@ import Pagination from '../Pagination/Pagination';
 import SearchBar from '../SearchBar/SearchBar';
 import User from '../User/User';
 import UsersList from '../UsersList/UsersList';
+import { usersData } from '../../data/usersData';
 
 export const DataTable = (props) => {
-	const { usersData, usersPerPage } = props;
+	const { usersPerPage } = props;
 
 	const [usersList, setUsersList] = useState(usersData);
 	const [startIndex, setStartIndex] = useState();
