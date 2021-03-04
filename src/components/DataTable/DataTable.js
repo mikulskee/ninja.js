@@ -41,9 +41,7 @@ export const DataTable = (props) => {
 	return (
 		<div>
 			<SearchBar usersData={usersData} setUsersList={setUsersList} />
-			<div>
-				<UsersList>{usersToRender}</UsersList>
-			</div>
+			<UsersList>{usersToRender}</UsersList>
 			<Pagination
 				currentPageNumber={currentPageIndex}
 				totalNumberOfPages={totalNumberOfPages}
