@@ -6,7 +6,7 @@ class App extends Component {
 	render() {
 		return (
 			<main className="container mt-3">
-				<DataTable usersData={this.props.rows} locale="da" rowsPerPage={5} />
+				<DataTable usersData={this.props.rows} locale="da" usersPerPage={5} />
 			</main>
 		);
 	}

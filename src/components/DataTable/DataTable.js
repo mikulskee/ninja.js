@@ -6,7 +6,7 @@ import User from '../User/User';
 import UsersList from '../UsersList/UsersList';
 
 export const DataTable = (props) => {
-	const { usersData, rowsPerPage } = props;
+	const { usersData, usersPerPage } = props;
 
 	const [usersList, setUsersList] = useState(usersData);
 	const [startIndex, setStartIndex] = useState();
@@ -19,24 +19,24 @@ export const DataTable = (props) => {
 	};
 
 	useEffect(() => {
+		if (usersPerPage === 0) {
+			setTotalNumberOfPages(0);
+		} else {
+			setTotalNumberOfPages(Math.ceil(usersList.length / usersPerPage));
+		}
+	}, [usersPerPage, setTotalNumberOfPages, usersList]);
+
+	useEffect(() => {
+		setStartIndex(currentPageIndex * usersPerPage);
+	}, [currentPageIndex, usersPerPage]);
+
+	useEffect(() => {
 		setUsersToRender(
 			usersList
 				.map((user) => <User key={user.per_id} user={user} />)
-				.slice(startIndex, startIndex + rowsPerPage)
+				.slice(startIndex, startIndex + usersPerPage)
 		);
-	}, [startIndex, rowsPerPage, usersList, setUsersToRender]);
-
-	useEffect(() => {
-		if (rowsPerPage === 0) {
-			setTotalNumberOfPages(0);
-		} else {
-			setTotalNumberOfPages(Math.ceil(usersList.length / rowsPerPage));
-		}
-	}, [rowsPerPage, setTotalNumberOfPages, usersList]);
-
-	useEffect(() => {
-		setStartIndex(currentPageIndex * rowsPerPage);
-	}, [currentPageIndex, rowsPerPage]);
+	}, [startIndex, usersPerPage, usersList, setUsersToRender]);
 
 	return (
 		<div>
