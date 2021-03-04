@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SearchBar = (props) => {
-	const { usersData, setUsersList } = props;
+	const { usersData, setUsersList, setSearchBarValue } = props;
 
 	const handleSearch = (e) => {
 		const text = e.target.value;
@@ -17,6 +17,8 @@ const SearchBar = (props) => {
 		} else {
 			setUsersList(usersData);
 		}
+
+		setSearchBarValue(text);
 	};
 
 	return (

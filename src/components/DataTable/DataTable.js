@@ -12,7 +12,8 @@ export const DataTable = (props) => {
 	const [startIndex, setStartIndex] = useState();
 	const [currentPageIndex, setCurrentPageIndex] = useState(0);
 	const [totalNumberOfPages, setTotalNumberOfPages] = useState();
-	const [usersToRender, setUsersToRender] = useState();
+	const [usersToRender, setUsersToRender] = useState([]);
+	const [searchBarValue, setSearchBarValue] = useState('');
 
 	const changePageIndex = (index) => {
 		setCurrentPageIndex(index);
@@ -40,8 +41,16 @@ export const DataTable = (props) => {
 
 	return (
 		<div>
-			<SearchBar usersData={usersData} setUsersList={setUsersList} />
-			<UsersList>{usersToRender}</UsersList>
+			<SearchBar
+				usersData={usersData}
+				setUsersList={setUsersList}
+				setSearchBarValue={setSearchBarValue}
+			/>
+			{searchBarValue && !usersToRender.length ? (
+				<p>User "{searchBarValue}" does not exist</p>
+			) : (
+				<UsersList>{usersToRender}</UsersList>
+			)}
 			<Pagination
 				currentPageNumber={currentPageIndex}
 				totalNumberOfPages={totalNumberOfPages}
