@@ -8,7 +8,9 @@ const User = (props) => {
 			<div>
 				<a href={user.edit_path}>{user.name1}</a>
 				<br />
-				<small>{user.email}</small>
+				<p>
+					<small>{user.email}</small>
+				</p>
 			</div>
 		</li>
 	);
